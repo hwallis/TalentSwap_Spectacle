@@ -34,11 +34,15 @@ require("spectacle/lib/themes/default/index.css");
 
 const images = {
   pat: require("../assets/backpat.jpg"),
-  home: require("../assets/homePageTS.jpg"),
-  dev: require("../assets/webdev.jpg"),
-  cleaner: require("../assets/cleaner.jpg"),
-  register: require("../assets/registerScreen.jpg"),
-  step6: require("../assets/bioS6.jpg")
+  home: require("../assets/NewHome.jpg"),
+  dev: require("../assets/guitar1.jpg"),
+  cleaner: require("../assets/fishing1.jpg"),
+  myprofile: require("../assets/MyProfile.jpg"),
+  registering: require("../assets/register.jpg"),
+  step6: require("../assets/bioS6.jpg"),
+  search: require("../assets/Search.jpg"),
+  comments: require("../assets/Comments.jpg"),
+  group: require("../assets/group.jpg")
 };
 
 preloader(images);
@@ -47,7 +51,7 @@ const theme = createTheme({
   primary: "white",
   secondary: "#36B9AB",
   tertiary: "#002F53",
-  quartenary: "#D51920"
+  quartenary: "gray"
 }, {
   primary: "Helvetica",
   secondary: "Montserrat"
@@ -62,46 +66,39 @@ export default class Presentation extends React.Component {
             Talent Swap
           </Heading>
           < br/>
-          <Text margin="30px 0 0" textColor="primary" size={2} fit bold>
+          <Text margin="20px 0 0" textColor="primary" size={2} fit bold>
             Connect with others and...
           </Text>
-          <Heading fit caps textColor="quartenary" size={5}>
+          <Heading fit caps textColor="quartenary" margin="10px 0 0" size={5}>
             Get to swapping!
           </Heading>
         </Slide>
-        <Slide transition={["fade"]}>
-          <Image src={images.home}></Image>
+        <Slide bgImage={images.home} transition={["fade"]}>
         </Slide>  
         <Slide transition={["fade"]}>
           <Image src={images.dev}></Image>
           <Appear><Image src={images.cleaner}></Image></Appear>
         </Slide>
         <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={6} textColor="quartenary" caps>Getting Set Up</Heading>
+          <Heading size={6} textColor="quartenary" caps>Getting Started...</Heading>
           <List>
-            <Appear><Image src={images.register}></Image></Appear>
+            <Image src={images.registering} style={{border: '5px solid gray'}}></Image>
           </List>
         </Slide>
-        <Slide transition={["slide"]} bgColor="primary">
-          <Heading size={6} textColor="quartenary" caps>Create a Great Bio!</Heading>
-          <List>
-            <Image src={images.step6}></Image>
-          </List>
+        <Slide transition={["spin"]} bgColor="primary">
+          <Image src={images.myprofile} style={{border: '5px solid gray'}}></Image>
         </Slide>
         <Slide transition={["fade"]}>
-          <Image src={images.pat}></Image>
+          <Image style={{border: '5px solid gray'}} src={images.pat}></Image>
         </Slide>
-        <Slide transition={["fade"]} bgColor="tertiary">
-          <Image src={images.search}></Image>
+        <Slide transition={["fade"]} bgColor="primary">
+          <Image src={images.search} style={{border: '5px solid gray'}}></Image>
         </Slide>
-        <Slide transition={["spin"]} bgColor="tertiary">
-          <Heading size={3} textColor="primary" caps>Getting Started</Heading>
-          <Heading size={1} textColor="secondary">Heading 1</Heading>
-          <Heading size={2} textColor="secondary">Heading 2</Heading>
-          <Heading size={3} textColor="secondary">Heading 3</Heading>
-          <Heading size={4} textColor="secondary">Heading 4</Heading>
-          <Heading size={5} textColor="secondary">Heading 5</Heading>
-          <Text size={6} textColor="secondary">Standard text</Text>
+        <Slide transition={["spin"]} bgColor="primary">
+          <Image src={images.comments} style={{border: '5px solid gray'}}></Image>
+        </Slide>
+        <Slide transition={["slide"]} bgColor="primary">
+          <Image style={{border: '5px solid gray'}} src={images.group}></Image>
         </Slide>
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <BlockQuote>
